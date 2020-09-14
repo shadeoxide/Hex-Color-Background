@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Picker</title>
+    <style>
+        input {
+            background-color: transparent !important;
+            border: none !important;
+            width: 1000%;
+        }
+
+        .center {
+            margin-top: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hex {
+            color: #000000;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="hex">#FFFFFF</h1>
+    <div class="center">
+        <br>
+        <form>
+            <input class="form-control" type="color" id="color" value="#FFFFFF" oninput="updateBackground()">
+        </form>
+    </div>
+
+    <script>
+        function updateBackground() {
+            let initial = document.getElementById("color").value;
+            document.body.style.backgroundColor = initial;
+            document.getElementById("hex").innerText = initial.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>
